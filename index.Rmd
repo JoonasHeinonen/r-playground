@@ -97,3 +97,19 @@ student_performance_data |>
   geom_smooth(method="lm") +
   theme_classic()
 ```
+
+Test the correlation:
+
+```{r}
+cor.test(
+  student_performance_data$final_exam_score,
+  student_performance_data$sleep_hours,
+  method="pearson"
+)
+```
+
+Linear regression:
+
+```{r}
+lm(final_exam_score ~ sleep_hours, data=student_performance_data)
+```
