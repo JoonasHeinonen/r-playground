@@ -1,1 +1,49 @@
 "0","knitr::opts_chunk$set(echo = TRUE)"
+"0",""
+"0","# Install the tidyverse package collection."
+"0","install.packages(""tidyverse"")"
+"2","G2;WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/g
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.6/tidyverse_2.0.0.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 433928 bytes (423 KB)
+"
+"2","downloaded 423 KB
+
+"
+"1","package ‘tidyverse’ successfully unpacked and MD5 sums checked
+"
+"1","
+"
+"1",""
+"1","The downloaded binary packages are in
+	C:\Users\joona\AppData\Local\Temp\Rtmp2LLMFY\downloaded_packages"
+"1",""
+"1","
+"
+"0","install.packages(""magrittr"")"
+"2","G2;WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/g
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.6/magrittr_2.0.5.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 231326 bytes (225 KB)
+"
+"2","downloaded 225 KB
+
+"
+"1","package ‘magrittr’ successfully unpacked and MD5 sums checked
+"
+"1","
+"
+"1",""
+"1","The downloaded binary packages are in
+	C:\Users\joona\AppData\Local\Temp\Rtmp2LLMFY\downloaded_packages"
+"1",""
+"1","
+"

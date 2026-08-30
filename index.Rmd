@@ -7,6 +7,10 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+# Install the tidyverse package collection.
+install.packages("tidyverse")
+install.packages("magrittr")
 ```
 
 ## R Markdown
@@ -28,3 +32,68 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Student performance data test. Trying out the possibilities of R!
+
+Initially, read the data set for student performance:
+
+```{r}
+library(readr)
+student_performance_data <- read_csv("data/student_performance_dataset.csv")
+```
+
+Now, create the histogram from the sleeping hours:
+
+```{r}
+hist(student_performance_data$sleep_hours)
+```
+
+Create a customized histogram from the attendance percent:
+
+```{r}
+library(ggplot2)
+# Create a custom histogram of the attendance percent.
+student_performance_data |>
+  ggplot(aes(x=attendance_percent)) +
+  geom_histogram(fill="lightblue", color="blue", binwidth =20) +
+  theme_classic()
+```
+
+Check the median and the quartal interval for the attendance percent:
+
+```{r}
+library(tidyverse)
+student_performance_data |>
+  summarise(attendance_percent_median=median(attendance_percent), 
+            attendance_percent_IQR=IQR(attendance_percent))
+```
+
+Create a box plot of study time hours related to attendance percent:
+
+```{r}
+library(ggplot2)
+student_performance_data |>
+  ggplot(aes(x=study_time_hours, y=attendance_percent)) +
+  geom_boxplot(aes(group=study_time_hours),
+               fill="skyblue1") +
+  theme_classic()
+```
+
+Group student performance by study time hours:
+
+```{r}
+student_performance_data |>
+  group_by(study_time_hours) |>
+  summarise(attendance_percent_median=median(attendance_percent),
+            attendance_percent_IQR=IQR(attendance_percent))
+```
+
+Create AES-plot on how sleeping hours affect the final exam score:
+
+```{r}
+student_performance_data |>
+  ggplot(aes(x=sleep_hours, y=final_exam_score)) +
+  geom_point() +
+  geom_smooth(method="lm") +
+  theme_classic()
+```
